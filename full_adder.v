@@ -2,7 +2,7 @@ module full_adder(output carry, sum, input a, b, c);
 	assign
 		carry = (a && b) || (b && c) || (a && b),
 		sum = ((!a) && (!b) && c) || ((!a) && b && (!c)) || 
-		(a && (!b) && (!c)) || (a && b && c);
+			(a && (!b) && (!c)) || (a && b && c);
 endmodule
 
 module test_full_adder;
