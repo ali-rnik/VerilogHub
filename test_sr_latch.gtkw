@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.94 (w)1999-2018 BSI
+[*] Wed Jul  3 22:52:48 2019
+[*]
+[dumpfile] "/home/arnik/git/verilog_examples/test_sr_latch.vcd"
+[dumpfile_mtime] "Wed Jul  3 22:38:38 2019"
+[dumpfile_size] 419
+[savefile] "/home/arnik/git/verilog_examples/test_sr_latch.gtkw"
+[timestart] 0
+[size] 1916 1033
+[pos] -1 -1
+*-0.193561 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test_sr_latch.
+[sst_width] 212
+[signals_width] 273
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+test_sr_latch.M1.enable
+@200
+-
+@28
+test_sr_latch.M1.reset
+@200
+-
+@28
+test_sr_latch.M1.set
+@200
+-
+-
+@28
+test_sr_latch.M1.out
+[pattern_trace] 1
+[pattern_trace] 0
