@@ -1,8 +1,6 @@
-module sr_latch(input set, reset, enable, output out);
-	assign out = (( out || ( set && enable)) && !( reset && enable));
-endmodule
+`include "sr_latch.v"
 
-module test_sr_latch;
+module tb_sr_latch;
 	reg [2:0] t_in;
 	wire out;
 
@@ -10,7 +8,7 @@ module test_sr_latch;
 
 	initial begin
 		$dumpfile("test_sr_latch.vcd");
-		$dumpvars(0,test_sr_latch);
+		$dumpvars(0);
 		t_in = 3'b000;
 		repeat(8) begin
 			#1 t_in <= t_in + 3'b001;
