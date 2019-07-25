@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.94 (w)1999-2018 BSI
-[*] Thu Jul 25 08:57:55 2019
+[*] Thu Jul 25 11:04:53 2019
 [*]
 [dumpfile] "/home/arnik/git/verilog_examples/modules_tb/tb_d_latch.vcd"
-[dumpfile_mtime] "Sat Jul 13 19:03:43 2019"
+[dumpfile_mtime] "Thu Jul 25 10:57:18 2019"
 [dumpfile_size] 616
 [savefile] "/home/arnik/git/verilog_examples/modules_tb/tb_d_latch.gtkw"
 [timestart] 0
-[size] 1916 1031
-[pos] -1 -1
-*-0.193561 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 956 1031
+[pos] 959 -1
+*-2.193561 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_d_latch.
 [treeopen] tb_d_latch.M1.
 [sst_width] 212
