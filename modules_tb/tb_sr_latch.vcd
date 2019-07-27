@@ -1,5 +1,5 @@
 $date
-	Thu Jul 25 15:27:18 2019
+	Sat Jul 27 02:16:02 2019
 $end
 $version
 	Icarus Verilog
@@ -9,17 +9,21 @@ $timescale
 $end
 $scope module tb_sr_latch $end
 $var wire 1 ! out $end
-$var reg 3 " t_in [2:0] $end
+$var reg 5 " t_in [4:0] $end
 $scope module M1 $end
-$var wire 1 # enable $end
+$var wire 1 # clear $end
+$var wire 1 $ enable $end
 $var wire 1 ! out $end
-$var wire 1 $ reset $end
-$var wire 1 % set $end
+$var wire 1 % preset $end
+$var wire 1 & reset $end
+$var wire 1 ' set $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+0'
+0&
 0%
 0$
 0#
@@ -27,10 +31,12 @@ b0 "
 x!
 $end
 #1
+0!
 1#
 b1 "
 #2
-1$
+1!
+1%
 0#
 b10 "
 #3
@@ -38,25 +44,3 @@ b10 "
 1#
 b11 "
 #4
-1%
-0$
-0#
-b100 "
-#5
-1!
-1#
-b101 "
-#6
-1$
-0#
-b110 "
-#7
-0!
-1#
-b111 "
-#8
-1!
-0%
-0$
-0#
-b0 "
