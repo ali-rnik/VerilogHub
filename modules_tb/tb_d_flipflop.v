@@ -2,7 +2,7 @@
 
 module tb_d_flipflop;
 	reg [1:0] t_in;
-	wire out;
+	reg out;
 
 	d_flipflop M1(t_in[1], t_in[0], out);
 

@@ -9,9 +9,11 @@ module tb_sr_latch;
 	initial begin
 		$dumpfile("tb_sr_latch.vcd");
 		$dumpvars(0);
-		t_in = 5'b00000;
+		t_in <= 5'b00000;
 		repeat(32) begin
-			#1 t_in = t_in + 5'b00001;
+			$monitor("\n%b %b %b %b %b\n", 
+				t_in[4], t_in[3], t_in[2], t_in[1], t_in[0]);
+			#1 t_in <= t_in + 5'b00001;
 		end
 	end
 endmodule
