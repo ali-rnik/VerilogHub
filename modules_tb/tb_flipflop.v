@@ -1,17 +1,46 @@
 `include "flipflop.v"
 
 module TB_FLIPFLOP;
-	reg [3:0] t_in;
+	reg clk, reset;
+	reg data, clk, preset, set, q_ex, qbar_ex;
 	wire q, qbar;
 
-	FLIPFLOP T1(t_in[3], t_in[2], t_in[1], t_in[0], q, qbar);
+	reg [31:0] index, errors;
+	reg [3:0] testvec[100000:0];
+
+	FLIPFLOP T1(data, clk, preset, clear, q, qbar);
+
+	always begin
+			clk = 1; #5; clk = 0; #5;
+	end
 
 	initial begin
-		$dumpfile("tb_flipflop.vcd");
-		$dumpvars(0);
-		t_in = 4'b0000;
-		repeat(16) begin
-			#1 t_in <= t_in + 4'b0001;
+		$readmemb("tb_flipflop.tv", testvec);
+		index = errors = 0;
+		reset = 1; #27; reset = 0;
+	end
+
+	always @(posedge clk) begin
+		#1; {data, clk, preset, clear} = testvec[index];
+	end
+
+	always @(negedge clk) begin
+		if (~reset) begin
+			if (q !== q_ex) begin
+				$display("Error detected");
+				$display("inputs  = %b", 
+					{data, clk, preset, clear});
+				$display("outputs = %b", 
+					{data, clk, preset, clear});
+				errors++;
+			end
+
+			index++;
+			if (testvec[index] === 4'bx) begin
+				$display("%d tests completed with %d errors", 
+					index, errors);
+				$finish;
+			end
 		end
 	end
 endmodule
