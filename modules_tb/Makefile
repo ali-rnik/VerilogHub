@@ -1,20 +1,23 @@
+ifeq ($(MODULES_DIR),)
+MODULES_DIR = $(CURDIR)/../modules
+endif
+
+ifeq ($(MODULES_DIR),)
+MODULES_TB_DIR =$(CURDIR)/../modules
+endif
+
+
 FLAGS = -Wall -Winfloop
 
-all: cleanVCD tb_sr_latch.vcd tb_d_latch.vcd tb_d_flipflop.vcd
+all: tb_latch.out tb_flipflop.out
 
-cleanVCD:
-	rm *.vcd
-tb_sr_latch.vcd: tb_sr_latch.v $(MODULES_DIR)/sr_latch.v
-	iverilog $(FLAGS) $< -o $<.o -I$(MODULES_DIR)
-	./$<.o
+tb_latch.out: tb_latch.v $(MODULES_DIR)/latch.v
+	iverilog $(FLAGS) $< -o $@ -I$(MODULES_DIR)
+	./$@
 
-tb_d_latch.vcd: tb_d_latch.v $(MODULES_DIR)/d_latch.v
-	iverilog $(FLAGS) $< -o $<.o -I$(MODULES_DIR)
-	./$<.o
-
-tb_d_flipflop.vcd: tb_d_flipflop.v $(MODULES_DIR)/d_flipflop.v
-	iverilog $(FLAGS) $< -o $<.o -I$(MODULES_DIR)
-	./$<.o
+tb_flipflop.out: tb_flipflop.v $(MODULES_DIR)/flipflop.v
+	iverilog $(FLAGS) $< -o $@ -I$(MODULES_DIR)
+	./$@
 
 clean:
-	rm *.o
+	-rm *.out

@@ -1,13 +1,13 @@
-`include "d_latch.v"
+`include "latch.v"
 
-module tb_d_latch;
+module TB_LATCH;
 	reg [3:0] t_in;
-	wire out;
+	wire q, qbar;
 
-	d_latch M1(t_in[3], t_in[2], t_in[1], t_in[0], out);
+	LATCH T1(t_in[3], t_in[2], t_in[1], t_in[0], q, qbar);
 
 	initial begin
-		$dumpfile("tb_d_latch.vcd");
+		$dumpfile("tb_latch.vcd");
 		$dumpvars(0);
 		t_in = 4'b0000;
 		repeat(16) begin
