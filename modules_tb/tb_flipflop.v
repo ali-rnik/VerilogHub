@@ -27,8 +27,8 @@ module TB_FLIPFLOP1;
 
 	always @(negedge tbclk) begin
 
-		$display("\ninputs = %b", 
-			{data, clk, preset, clear});
+		$display("\nsimulation at time: %d", $time);
+		$display("inputs: %b", {data, clk, preset, clear});
 		$display("output is %b and expected %b", q, q_ex);
 
 		if (q !== q_ex) begin
@@ -38,27 +38,9 @@ module TB_FLIPFLOP1;
 
 		index++;
 		if (testvec[index] === 5'bx) begin
-			$display("%d tests completed with %d errors", 
+			$display("\n%d tests completed with %d errors", 
 				index, errors);
 			$finish;
 		end
 	end
 endmodule
-
-//module TB_FLIPFLOP2;
-//	reg [3:0] t_in;
-//	wire q, qbar;
-//
-//	FLIPFLOP T1(t_in[1], 1'b1, 1'b0, 1'b0, q, qbar);
-//
-//	initial begin
-//		$dumpfile("tb_flipflop.vcd");
-//		$dumpvars(0);
-//		t_in = 4'b0000;
-//		repeat(16) begin
-//			#1 t_in <= t_in + 4'b0001;
-//		end
-//	end
-//
-//endmodule
-

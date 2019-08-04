@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.94 (w)1999-2018 BSI
+[*] Mon Jul 29 15:06:40 2019
+[*]
+[dumpfile] "/home/arnik/git/verilog_examples/modules_tb/dump_flipflop.vcd"
+[dumpfile_mtime] "Mon Jul 29 14:28:20 2019"
+[dumpfile_size] 1735
+[savefile] "/home/arnik/git/verilog_examples/modules_tb/gtkw_flipflop.gtkw"
+[timestart] 0
+[size] 1916 1031
+[pos] -1 -1
+*-5.152975 11 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 214
+[signals_width] 119
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+TB_FLIPFLOP1.data
+@200
+-
+@28
+TB_FLIPFLOP1.clk
+@201
+-
+@200
+-
+@28
+TB_FLIPFLOP1.q
+[pattern_trace] 1
+[pattern_trace] 0
