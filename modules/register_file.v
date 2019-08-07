@@ -3,19 +3,19 @@ module register_file(
 			readAdr1, 
 			readAdr2, 
 			writeAdr, 
-			input [31:0]
-			writeData 
+			input [63:0]
+			writeData,
 			input 
-			writeEnable
+			writeEnable,
 			clk, 
-			output [31:0] 
+			output [63:0] 
 			readData1, 
 			readData2); 
 
-	reg [31:0] register[32];
+	reg [63:0] register[64];
 
-	readData1 = register[readAdr1];
-	readData2 = register[readAdr2];
+	assign readData1 = register[readAdr1];
+	assign readData2 = register[readAdr2];
 
 	always @(posedge clk) begin
 		if (writeEnable)

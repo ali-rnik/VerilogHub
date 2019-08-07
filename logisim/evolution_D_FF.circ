@@ -326,10 +326,6 @@ end TCL_Generic;
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="circuitvhdlpath" val=""/>
     <wire from="(320,240)" to="(380,240)"/>
-    <wire from="(290,180)" to="(290,210)"/>
-    <wire from="(290,180)" to="(650,180)"/>
-    <wire from="(270,230)" to="(310,230)"/>
-    <wire from="(650,180)" to="(650,200)"/>
     <wire from="(380,140)" to="(380,240)"/>
     <wire from="(390,240)" to="(420,240)"/>
     <wire from="(400,100)" to="(400,260)"/>
@@ -340,6 +336,10 @@ end TCL_Generic;
     <wire from="(410,200)" to="(420,200)"/>
     <wire from="(380,120)" to="(390,120)"/>
     <wire from="(340,220)" to="(420,220)"/>
+    <wire from="(290,180)" to="(290,210)"/>
+    <wire from="(290,180)" to="(650,180)"/>
+    <wire from="(270,230)" to="(310,230)"/>
+    <wire from="(650,180)" to="(650,200)"/>
     <wire from="(390,120)" to="(390,240)"/>
     <wire from="(410,80)" to="(410,200)"/>
     <wire from="(640,200)" to="(650,200)"/>
@@ -374,5 +374,38 @@ end TCL_Generic;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="circuitvhdlpath" val=""/>
+    <wire from="(260,250)" to="(320,250)"/>
+    <wire from="(260,310)" to="(320,310)"/>
+    <wire from="(290,300)" to="(320,300)"/>
+    <wire from="(260,290)" to="(290,290)"/>
+    <wire from="(560,330)" to="(610,330)"/>
+    <wire from="(300,290)" to="(320,290)"/>
+    <wire from="(270,330)" to="(320,330)"/>
+    <wire from="(290,290)" to="(290,300)"/>
+    <wire from="(300,270)" to="(300,290)"/>
+    <wire from="(260,360)" to="(270,360)"/>
+    <wire from="(610,330)" to="(610,360)"/>
+    <wire from="(270,330)" to="(270,360)"/>
+    <wire from="(260,270)" to="(300,270)"/>
+    <wire from="(610,360)" to="(620,360)"/>
+    <comp lib="4" loc="(320,240)" name="RAM">
+      <a name="addrWidth" val="2"/>
+      <a name="dataWidth" val="3"/>
+      <a name="databus" val="bibus"/>
+    </comp>
+    <comp lib="0" loc="(260,250)" name="Pin">
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(260,270)" name="Pin"/>
+    <comp lib="0" loc="(260,290)" name="Pin"/>
+    <comp lib="0" loc="(260,310)" name="Pin"/>
+    <comp lib="0" loc="(260,360)" name="Pin">
+      <a name="width" val="3"/>
+    </comp>
+    <comp lib="0" loc="(620,360)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="3"/>
+    </comp>
   </circuit>
 </project>

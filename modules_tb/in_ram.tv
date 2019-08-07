@@ -1,0 +1,12 @@
+//
+1 //adr
+21 //writeData
+1 //readEn
+1 //writeEn
+xxxx_xxxx_xxxx_xxxx //readData_ex
+//
+1 //adr
+1 //writeData
+1 //readEn
+0 //writeEn
+21 //readData_ex
