@@ -8,7 +8,7 @@ module ram(
 		writeEn, 
 		clk, 
 		output reg [63:0] readData);
-	reg [63:0] mem[10485760];
+	reg [63:0] mem[10485];
 
 	assign readData = mem[adr];
 	always @(posedge clk) begin
