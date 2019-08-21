@@ -8,7 +8,7 @@ module register_file(
 			input 
 			writeEnable,
 			clk, 
-			output [63:0] 
+			output reg [63:0] 
 			readData1, 
 			readData2); 
 
