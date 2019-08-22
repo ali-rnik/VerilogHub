@@ -1,18 +1,14 @@
-FLAGS = -Wall -Winfloop
+all: alu ram register_file junk_files
 
-all: flipflop.out clock.out full_adder.out latch.out
+alu: alu.v
+	-veripoke $<
+ram: ram.v
+	-veripoke $<
+register_file: register_file.v
+	-veripoke $<
 
-flipflop.out: flipflop.v latch.out
-	iverilog $(FLAGS) $< -o $@
+junk_files:
+	-rm -rf *_dir *.cpp
 
-clock.out: clock.v
-	iverilog $(FLAGS) $< -o $@
-
-full_adder.out: full_adder.v
-	iverilog $(FLAGS) $< -o $@
-
-latch.out: latch.v
-	iverilog $(FLAGS) $< -o $@
-
-clean:
-	-rm  *.out
+clean: junk_files
+	-rm alu ram register_file *.txt
