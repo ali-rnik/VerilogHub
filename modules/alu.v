@@ -21,9 +21,9 @@ module alu(
 			// subtraction
 			3'b001: out <= in_A - in_B;
 			// and
-			3'b010: out <= in_A && in_B;
+			3'b010: out <= in_A & in_B;
 			// or
-			3'b011: out <= in_A || in_B;
+			3'b011: out <= in_A | in_B;
 			// shift left
 			3'b100: out <= in_A <<< 1;
 			// shift right

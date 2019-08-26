@@ -8,7 +8,7 @@ register_file: register_file.v
 	-veripoke $<
 
 junk_files:
-	-rm -rf *_dir *.cpp
+	-rm -rf *_dir *.cpp *.txt
 
 clean: junk_files
-	-rm alu ram register_file *.txt
+	-rm alu ram register_file
