@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		tb->clk = clk;
 		tb->eval();
 
-		printf("pc equal to : %d\n", tb->pc);
+		printf("pc equal to : %d\n", tb->pc_s);
 		printf("op equal to : %d\n", tb->op_s);
 		//printf("instruct equal to : %d\n", tb->instruct_s);
 		printf("rdData equal to : %d\n", tb->rdData_s);

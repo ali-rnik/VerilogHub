@@ -128,7 +128,7 @@ void VaddPath::_initial__TOP__1(VaddPath__Syms* __restrict vlSymsp) {
     vlTOPp->addPath__DOT__INST_MEM__DOT__mem[1U] = 
         (VL_ULL(0xfffffffffe03ffff) & vlTOPp->addPath__DOT__INST_MEM__DOT__mem
          [1U]);
-    vlTOPp->pc = 0U;
+    vlTOPp->addPath__DOT__pc = 0U;
 }
 
 VL_INLINE_OPT void VaddPath::_sequent__TOP__2(VaddPath__Syms* __restrict vlSymsp) {
@@ -138,18 +138,19 @@ VL_INLINE_OPT void VaddPath::_sequent__TOP__2(VaddPath__Syms* __restrict vlSymsp
     CData/*5:0*/ __Vdlyvdim0__addPath__DOT__REG_FILE__DOT__register__v0;
     QData/*63:0*/ __Vdlyvval__addPath__DOT__REG_FILE__DOT__register__v0;
     // Body
-    vlTOPp->pc = (0xffffU & ((IData)(4U) + (IData)(vlTOPp->pc)));
     __Vdlyvval__addPath__DOT__REG_FILE__DOT__register__v0 
         = vlTOPp->addPath__DOT__rdData;
     __Vdlyvdim0__addPath__DOT__REG_FILE__DOT__register__v0 
         = (0x3fU & (IData)((vlTOPp->addPath__DOT__instruct 
                             >> 6U)));
+    vlTOPp->addPath__DOT__pc = (0x3fffU & ((IData)(4U) 
+                                           + (IData)(vlTOPp->addPath__DOT__pc)));
     vlTOPp->addPath__DOT__REG_FILE__DOT__register[__Vdlyvdim0__addPath__DOT__REG_FILE__DOT__register__v0] 
         = __Vdlyvval__addPath__DOT__REG_FILE__DOT__register__v0;
-    vlTOPp->addPath__DOT__instruct = ((0x28f4U >= (0x3fffU 
-                                                   & (IData)(vlTOPp->pc)))
+    vlTOPp->pc_s = vlTOPp->addPath__DOT__pc;
+    vlTOPp->addPath__DOT__instruct = ((0x28f4U >= (IData)(vlTOPp->addPath__DOT__pc))
                                        ? vlTOPp->addPath__DOT__INST_MEM__DOT__mem
-                                      [(0x3fffU & (IData)(vlTOPp->pc))]
+                                      [vlTOPp->addPath__DOT__pc]
                                        : VL_ULL(0));
     vlTOPp->op_s = (7U & (IData)(vlTOPp->addPath__DOT__instruct));
     vlTOPp->instruct_s = vlTOPp->addPath__DOT__instruct;
@@ -199,10 +200,10 @@ void VaddPath::_settle__TOP__3(VaddPath__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VaddPath::_settle__TOP__3\n"); );
     VaddPath* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->addPath__DOT__instruct = ((0x28f4U >= (0x3fffU 
-                                                   & (IData)(vlTOPp->pc)))
+    vlTOPp->pc_s = vlTOPp->addPath__DOT__pc;
+    vlTOPp->addPath__DOT__instruct = ((0x28f4U >= (IData)(vlTOPp->addPath__DOT__pc))
                                        ? vlTOPp->addPath__DOT__INST_MEM__DOT__mem
-                                      [(0x3fffU & (IData)(vlTOPp->pc))]
+                                      [vlTOPp->addPath__DOT__pc]
                                        : VL_ULL(0));
     vlTOPp->op_s = (7U & (IData)(vlTOPp->addPath__DOT__instruct));
     vlTOPp->instruct_s = vlTOPp->addPath__DOT__instruct;
@@ -303,7 +304,6 @@ void VaddPath::_ctor_var_reset() {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VaddPath::_ctor_var_reset\n"); );
     // Body
     clk = VL_RAND_RESET_I(1);
-    pc = VL_RAND_RESET_I(16);
     op_s = VL_RAND_RESET_I(3);
     instruct_s = VL_RAND_RESET_Q(64);
     rdData_s = VL_RAND_RESET_Q(64);
@@ -312,10 +312,12 @@ void VaddPath::_ctor_var_reset() {
     rd_s = VL_RAND_RESET_I(6);
     rs1_s = VL_RAND_RESET_I(6);
     rs2_s = VL_RAND_RESET_I(6);
+    pc_s = VL_RAND_RESET_I(14);
     addPath__DOT__instruct = VL_RAND_RESET_Q(64);
     addPath__DOT__rdData = VL_RAND_RESET_Q(64);
     addPath__DOT__rs1Data = VL_RAND_RESET_Q(64);
     addPath__DOT__rs2Data = VL_RAND_RESET_Q(64);
+    addPath__DOT__pc = VL_RAND_RESET_I(14);
     { int __Vi0=0; for (; __Vi0<10485; ++__Vi0) {
             addPath__DOT__INST_MEM__DOT__mem[__Vi0] = VL_RAND_RESET_Q(64);
     }}

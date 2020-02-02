@@ -25,7 +25,7 @@ VL_MODULE(VaddPath) {
     VL_OUT8(rd_s,5,0);
     VL_OUT8(rs1_s,5,0);
     VL_OUT8(rs2_s,5,0);
-    VL_OUT16(pc,15,0);
+    VL_OUT16(pc_s,13,0);
     VL_OUT64(instruct_s,63,0);
     VL_OUT64(rdData_s,63,0);
     VL_OUT64(rs1Data_s,63,0);
@@ -33,6 +33,7 @@ VL_MODULE(VaddPath) {
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
+    SData/*13:0*/ addPath__DOT__pc;
     QData/*63:0*/ addPath__DOT__instruct;
     QData/*63:0*/ addPath__DOT__rdData;
     QData/*63:0*/ addPath__DOT__rs1Data;
