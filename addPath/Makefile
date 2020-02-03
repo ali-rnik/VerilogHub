@@ -1,4 +1,5 @@
+FILE=file
 all:
-	verilator -Wall -cc addPath.v
-	make -C obj_dir -f VaddPath.mk
-	g++ -g -I /usr/share/verilator/include/ -I ./obj_dir  /usr/share/verilator/include/verilated.cpp addPath.cpp obj_dir/VaddPath__ALL.a -o program 
+	verilator -cc  $(FILE).v  --Mdir obj_$(FILE) --prefix topMod
+	make -C obj_$(FILE) -f topMod.mk
+	#g++ -g -I  -I ./obj_dir  /usr/share/verilator/include/verilated.cpp addPath.cpp obj_dir/VaddPath__ALL.a -o program 
