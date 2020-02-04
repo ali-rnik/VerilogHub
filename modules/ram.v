@@ -1,4 +1,3 @@
-/* verilator lint_off WIDTH */
 module ram(input [15:0] adr, input [63:0] writeData, input readEn, writeEn, 
 	clk, output [63:0] readData);
 
@@ -10,4 +9,3 @@ module ram(input [15:0] adr, input [63:0] writeData, input readEn, writeEn,
 		end
 	end
 endmodule
-/* verilator lint_off WIDTH */

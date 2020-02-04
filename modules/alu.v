@@ -1,13 +1,6 @@
-module alu(
-		input [63:0]
-		in_A,
-		in_B,
-		input [2:0]
-		control,
-		output reg [63:0]
-		out,
-		output
-		zero);
+module alu(input [63:0] in_A, in_B, input [2:0] control, output [63:0] out, 
+	output zero);
+
 	assign zero = (in_A == in_B) ? 1 : 0;
 
 	always @(*) begin
