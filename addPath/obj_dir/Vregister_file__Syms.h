@@ -4,16 +4,16 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef _VaddPath__Syms_H_
-#define _VaddPath__Syms_H_
+#ifndef _Vregister_file__Syms_H_
+#define _Vregister_file__Syms_H_
 
 #include "verilated.h"
 
 // INCLUDE MODULE CLASSES
-#include "VaddPath.h"
+#include "Vregister_file.h"
 
 // SYMS CLASS
-class VaddPath__Syms : public VerilatedSyms {
+class Vregister_file__Syms : public VerilatedSyms {
   public:
     
     // LOCAL STATE
@@ -21,11 +21,11 @@ class VaddPath__Syms : public VerilatedSyms {
     bool __Vm_didInit;
     
     // SUBCELL STATE
-    VaddPath*                      TOPp;
+    Vregister_file*                TOPp;
     
     // CREATORS
-    VaddPath__Syms(VaddPath* topp, const char* namep);
-    ~VaddPath__Syms() {}
+    Vregister_file__Syms(Vregister_file* topp, const char* namep);
+    ~Vregister_file__Syms() {}
     
     // METHODS
     inline const char* name() { return __Vm_namep; }

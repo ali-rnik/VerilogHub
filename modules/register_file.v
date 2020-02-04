@@ -1,16 +1,6 @@
-module register_file(
-			input [5:0] 
-			readAdr1, 
-			readAdr2, 
-			writeAdr, 
-			input [63:0]
-			writeData,
-			input 
-			writeEnable,
-			clk, 
-			output reg [63:0] 
-			readData1, 
-			readData2); 
+module register_file(input [5:0] readAdr1, readAdr2, writeAdr, 
+	input [63:0] writeData, input writeEnable, clk, 
+	output [63:0] readData1, readData2); 
 
 	reg [63:0] register[64];
 
@@ -21,4 +11,5 @@ module register_file(
 		if (writeEnable)
 			register[writeAdr] <= writeData;
 	end
+
 endmodule

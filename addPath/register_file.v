@@ -17,12 +17,6 @@ module register_file(
 	assign readData1 = register[readAdr1];
 	assign readData2 = register[readAdr2];
 
-	initial begin
-		register[0] = 64'b0;
-		register[1] = 64'd3;
-		register[2] = 64'd5;
-	end
-
 	always @(posedge clk) begin
 		if (writeEnable)
 			register[writeAdr] <= writeData;

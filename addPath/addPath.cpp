@@ -21,16 +21,6 @@ int main(int argc, char **argv)
 		cin >> clk;
 		tb->clk = clk;
 		tb->eval();
-
-		printf("pc equal to : %d\n", tb->pc_s);
-		printf("op equal to : %d\n", tb->op_s);
-		//printf("instruct equal to : %d\n", tb->instruct_s);
-		printf("rdData equal to : %d\n", tb->rdData_s);
-		printf("rs1Data equal to : %d\n", tb->rs1Data_s);
-		printf("rs2Data equal to : %d\n", tb->rs2Data_s);
-		printf("rd equal to : %d\n", tb->rd_s);
-		printf("rs1 equal to : %d\n", tb->rs1_s);
-		printf("rs2 equal to : %d\n", tb->rs2_s);
 	}
 	return 0;
 }

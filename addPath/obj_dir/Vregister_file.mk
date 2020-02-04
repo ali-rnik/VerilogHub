@@ -2,9 +2,9 @@
 # DESCRIPTION: Verilator output: Makefile for building Verilated archive or executable
 #
 # Execute this makefile from the object directory:
-#    make -f VaddPath.mk
+#    make -f Vregister_file.mk
 
-default: VaddPath__ALL.a
+default: Vregister_file__ALL.a
 
 ### Constants...
 # Perl executable (from $PERL)
@@ -28,9 +28,9 @@ VM_SC_TARGET_ARCH = linux
 
 ### Vars...
 # Design prefix (from --prefix)
-VM_PREFIX = VaddPath
+VM_PREFIX = Vregister_file
 # Module prefix (from --prefix)
-VM_MODPREFIX = VaddPath
+VM_MODPREFIX = Vregister_file
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
 
@@ -46,7 +46,7 @@ VM_USER_DIR = \
 
 ### Default rules...
 # Include list of all generated classes
-include VaddPath_classes.mk
+include Vregister_file_classes.mk
 # Include global rules
 include $(VERILATOR_ROOT)/include/verilated.mk
 

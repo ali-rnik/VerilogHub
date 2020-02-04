@@ -1,13 +1,13 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "VaddPath__Syms.h"
-#include "VaddPath.h"
+#include "Vregister_file__Syms.h"
+#include "Vregister_file.h"
 
 
 
 // FUNCTIONS
-VaddPath__Syms::VaddPath__Syms(VaddPath* topp, const char* namep)
+Vregister_file__Syms::Vregister_file__Syms(Vregister_file* topp, const char* namep)
     // Setup locals
     : __Vm_namep(namep)
     , __Vm_didInit(false)
