@@ -7,9 +7,10 @@ module program_counter(input [15:0] adr_in, input clk, output [15:0] adr_out);
 		data <= adr_in;
 	end
 
+//------------------------simulation-------------------------------//
 	always @(*) begin
-		$display("program_counter: data: : %d\n", data);
-		$display("program_counter: adr_in: : %d\n", adr_in);
-		$display("program_counter: adr_out: : %d\n", adr_out);
+		$display("program_counter: data:    %2d", data);
+		$display("program_counter: adr_in:  %2d", adr_in);
+		$display("program_counter: adr_out: %2d\n", adr_out);
 	end
 endmodule

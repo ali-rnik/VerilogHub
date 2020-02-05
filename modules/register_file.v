@@ -12,4 +12,18 @@ module register_file(input [5:0] readAdr1, readAdr2, writeAdr,
 			register[writeAdr] <= writeData;
 	end
 
+//-----------------------simulation-------------------------------//
+	always @(*) begin
+		$display("register_file: readAdr1:     %2d", readAdr1);
+		$display("register_file: readAdr2:     %2d", readAdr2);
+		$display("register_file: writeAdr:     %2d", writeAdr);
+		$display("register_file: writeData:    %2d", writeData);
+		$display("register_file: writeEnable:  %2d", writeEnable);
+		$display("register_file: readData1:    %2d", readData1);
+		$display("register_file: readData2:    %2d", readData2);
+		$display("register_file: register[%2d]: %2d\n", writeAdr, 
+			register[writeAdr]);
+
+	end
+
 endmodule
