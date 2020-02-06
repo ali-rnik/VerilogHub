@@ -13,9 +13,18 @@ int main(int argc, char **argv)
 	mips->clk = 0;
 
 	while (1) {
-		mips->clk == 0 ? mips->clk = 1 : mips->clk = 0;
+		printf("=========================\n");
+
+		printf("clk was changed from %d -> %d and result is: \n\n", 
+				mips->clk, !mips->clk);
+		if (mips->clk == 1)
+			mips->clk = 0;
+		else if (mips->clk == 0)
+			mips->clk = 1;
+
 		mips->eval();
-		sleep(1);
+
+		sleep(2);
 	}
 
 }
