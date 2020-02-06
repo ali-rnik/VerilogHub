@@ -5,7 +5,7 @@ module mips(input clk, output z);
 	wire [63:0] w3, w4, w5, w6;
 
 	program_counter PC(.adr_in(w1), .clk(clk), .adr_out(w2));
-	adder ADDER(.in_A(w2), .out(w1));
+	adder ADDER(.in_A(w2), .in_B(16'd4), .out(w1));
 	ram INS_MEM(.adr(w2), .writeData(64'd0), .writeEn(1'b0), .clk(1'b0), 
 		.readData(w3));
 	register_file REG_FILE(.readAdr1(w3[17:12]), .readAdr2(w3[23:18]), 

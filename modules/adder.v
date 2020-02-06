@@ -1,5 +1,5 @@
-module adder(input [15:0] in_A, output [15:0] out);
-	assign out = in_A + 16'd4;
+module adder(input [15:0] in_A, in_B, output [15:0] out);
+	assign out = in_A + in_B;
 
 //------------------------simulation-------------------------------//
 	always @(*) begin

@@ -11,10 +11,9 @@ int main(int argc, char **argv)
 	Vmips *mips = new Vmips;
 
 	mips->clk = 0;
-	mips->eval();
 
 	while (1) {
-		mips->clk = ~mips->clk;
+		mips->clk == 0 ? mips->clk = 1 : mips->clk = 0;
 		mips->eval();
 		sleep(1);
 	}

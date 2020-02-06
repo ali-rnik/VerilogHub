@@ -1,0 +1,4 @@
+read_verilog mips.v program_counter.v ram.v register_file.v alu.v adder.v
+hierarchy -check
+proc; hierarchy;
+show mips

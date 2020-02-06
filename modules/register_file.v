@@ -23,7 +23,10 @@ module register_file(input [5:0] readAdr1, readAdr2, writeAdr,
 		$display("register_file: readData2:    %2d", readData2);
 		$display("register_file: register[%2d]: %2d\n", writeAdr, 
 			register[writeAdr]);
+	end
 
+	initial begin
+		$readmemb("data_register.txt", register);
 	end
 
 endmodule
