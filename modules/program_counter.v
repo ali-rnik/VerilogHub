@@ -1,16 +1,16 @@
-module program_counter(input [15:0] adr_in, input clk, output [15:0] adr_out);
+module program_counter (input [15:0] in, input clk, output [15:0] out);
 	reg [15:0] data;
 
-	assign adr_out = data;
+	assign out = data;
 
 	always @(posedge clk) begin
-		data <= adr_in;
+		data <= in;
 	end
 
 //------------------------simulation-------------------------------//
 	always @(*) begin
 		$display("program_counter: data:    %2d", data);
-		$display("program_counter: adr_in:  %2d", adr_in);
-		$display("program_counter: adr_out: %2d\n", adr_out);
+		$display("program_counter: in:  %2d", adr_in);
+		$display("program_counter: out: %2d\n", adr_out);
 	end
 endmodule
