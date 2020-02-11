@@ -18,8 +18,14 @@ int main(int argc, char **argv)
 	mips->clk = 0;
 
 	int main_time = 0;
+	int pos_edge = 1;
+	string s;
 	while (main_time < 10) {
+		cin >> s;
 		printf("=========================\n");
+
+		if (mips->clk == 0)
+			printf("%dth pos clk edge.", pos_edge++);
 
 		printf("clk was changed from %d -> %d and result is: \n\n", 
 				mips->clk, !mips->clk);
