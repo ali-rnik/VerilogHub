@@ -19,13 +19,11 @@ int main(int argc, char **argv)
 
 	int main_time = 0;
 	int pos_edge = 1;
-	string s;
-	while (main_time < 10) {
-		cin >> s;
+	while (main_time <= 18) {
 		printf("=========================\n");
 
 		if (mips->clk == 0)
-			printf("%dth pos clk edge.", pos_edge++);
+			printf("%dth pos clk edge.\n", pos_edge++);
 
 		printf("clk was changed from %d -> %d and result is: \n\n", 
 				mips->clk, !mips->clk);
@@ -36,7 +34,7 @@ int main(int argc, char **argv)
 
 		mips->eval();
 
-		main_time += 1;
+		main_time++;
 		tfp->dump(main_time);
 		sleep(2);
 	}

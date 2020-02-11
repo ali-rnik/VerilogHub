@@ -23,6 +23,6 @@ module ram(input [15:0] adr, input [63:0] writeData, input writeEn, clk,
 	end
 
 	initial begin
-		$readmemb("data_mem.txt", mem, 0, 4);
+		$readmemb("data_mem.txt", mem, 0, 5);
 	end
 endmodule

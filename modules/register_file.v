@@ -21,11 +21,13 @@ module register_file(input [5:0] readAdr1, readAdr2, writeAdr,
 		$display("register_file: writeEnable:  %2d", writeEnable);
 		$display("register_file: readData1:    %2d", readData1);
 		$display("register_file: readData2:    %2d", readData2);
-//		for (int i = 0; i <= 3; i++) begin
-//			$display("register_file: register[%2d]: %2d", 
-//				i, register[i]);
-//		end
+`ifndef SYNTHESIS
+		for (int i = 0; i <= 3; i++) begin
+			$display("register_file: register[%2d]: %2d", 
+				i, register[i]);
+		end
 		$display();
+`endif
 	end
 
 	initial begin
