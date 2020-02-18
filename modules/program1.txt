@@ -1,0 +1,12 @@
+r1 = 7
+r2 = 7
+
+0: add r3, r1, r2; // r3 == 14
+1: beq r1, r2, 5;
+2: add r3, r3, r2; // r3 == 21
+3: add r3, r3, r2; // r3 == 28
+4: add r2, r3, r1; // if seq: r2 == 35, if branch: r2 == 21
+5: add r2, r2, r1; // r2 = 28
+
+
+
